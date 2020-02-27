@@ -8,3 +8,6 @@ cd controleponto-api
 ./mvnw spring-boot:run
 API será executada em http://localhost:8080
 ```
+
+
+Obs: Instalar o maven e configurar a variável de ambiente.
