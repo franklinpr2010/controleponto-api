@@ -24,6 +24,7 @@ public class PasswordUtils {
 
 		log.info("Gerando hash com o BCrypt.");
 		BCryptPasswordEncoder bCryptEncoder = new BCryptPasswordEncoder();
+		//retorna o hash da senha que o usuário digitar
 		return bCryptEncoder.encode(senha);
 	}
 

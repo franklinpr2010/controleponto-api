@@ -23,6 +23,8 @@ public class EmpresaRepositoryTest {
 	
 	private static final String CNPJ = "51463645000100";
 
+
+	//Execução antes do teste
 	@Before
 	public void setUp() throws Exception {
 		Empresa empresa = new Empresa();
@@ -31,6 +33,7 @@ public class EmpresaRepositoryTest {
 		this.empresaRepository.save(empresa);
 	}
 	
+	//Execução depois do teste
 	@After
     public final void tearDown() { 
 		this.empresaRepository.deleteAll();

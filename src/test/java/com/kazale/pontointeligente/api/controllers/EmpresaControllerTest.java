@@ -25,6 +25,7 @@ import com.kazale.pontointeligente.api.entities.Empresa;
 import com.kazale.pontointeligente.api.services.EmpresaService;
 
 @RunWith(SpringRunner.class)
+//O Spring criará um contexto de teste e não um contexto de uma aplicação de produção real
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")

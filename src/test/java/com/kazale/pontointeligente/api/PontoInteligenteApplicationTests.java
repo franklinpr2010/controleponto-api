@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+//Fara com que carregue o profile de teste - application-test.properties
 @ActiveProfiles("test")
 public class PontoInteligenteApplicationTests {
 

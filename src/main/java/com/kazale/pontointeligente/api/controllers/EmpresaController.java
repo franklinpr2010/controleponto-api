@@ -19,6 +19,7 @@ import com.kazale.pontointeligente.api.services.EmpresaService;
 
 @RestController
 @RequestMapping("/api/empresas")
+//torna acessivel a muitos domínios
 @CrossOrigin(origins = "*")
 public class EmpresaController {
 
