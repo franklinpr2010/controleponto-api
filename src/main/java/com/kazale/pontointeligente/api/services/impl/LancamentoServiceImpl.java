@@ -34,12 +34,31 @@ public class LancamentoServiceImpl implements LancamentoService {
 		return this.lancamentoRepository.findByFuncionarioIdOrderByDataDesc(funcionarioId);
 	}
 	
+   /**
+	*   Using @Cacheable
+	*  If we annotate our bean by Spring @Cacheable annotation, it declares that it will be cached. 
+	*  We need to provide cache name defined in ehcache.xml. In our example we have a cache named
+	*  as empcache in ehcache.xml and we have provided this name in @Cacheable. When Spring will 
+	*  hit the method for the first time, the result of that method will be cached and for same 
+	*  argument value, Spring will not hit the method next time. Once the cache is expired, 
+	*  then the Spring will hit the method again for the same argument value.
+    */
 	@Cacheable("lancamentoPorId")
 	public Optional<Lancamento> buscarPorId(Long id) {
 		log.info("Buscando um lançamento pelo ID {}", id);
 		return this.lancamentoRepository.findById(id);
 	}
 	
+	//Irá susbstiuir o valor do cache atual pelo cache informado.
+	/**
+     * This page will provide spring @CachePut annotation example using JavaConfig. This annotation is 
+	 * used to put value in cache for the given cache name and key. In contrary to @Cacheable 
+	 * annotation, the method annotated with @CachePut runs for every call and put results 
+	 * in cache. @CachePut has elements such as cacheNames, value, condition, key, unless, 
+	 * keyGenerator etc. To compute the key, method parameters are used by default, but a
+	 * SpEL expression can be provided via the key attribute.
+     * Now @CachePut is used as follows.
+	 */
 	@CachePut("lancamentoPorId")
 	public Lancamento persistir(Lancamento lancamento) {
 		log.info("Persistindo o lançamento: {}", lancamento);
