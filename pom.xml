@@ -96,7 +96,7 @@
 			<version>3.6</version>
 		</dependency>
 		
-		<!-- JWT Token -->
+		<!-- JWT Token - gerador de token -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>

@@ -19,6 +19,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @SpringBootApplication
+//Habilitando o EhCache no SpringBoot.
 @EnableCaching
 public class PontoInteligenteApplication {
 
